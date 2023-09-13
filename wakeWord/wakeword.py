@@ -1,11 +1,15 @@
+#wakeup model
 import pvporcupine
-import pyaudio
+#voice/wave/sound process
+import pyaudio 
+
 import struct
 #API KEY for hot word picovoice
 
 
 PICOVOICE_API_KEY = "KNIrwq9lmXqHfNxhvDTDPsFQ5hTYOAmGdK0PAQqaFtPunAsbXHO2Vg=="
-porcupine = pvporcupine.create(
+
+porcupine = pvporcupine.create( #create procupine
     access_key = PICOVOICE_API_KEY,
     keyword_paths = ['./wakeWord/Hey-Yuki_en_windows_v2_2_0/Hey-Yuki_en_windows_v2_2_0.ppn'],
 )
