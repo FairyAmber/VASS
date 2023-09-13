@@ -36,10 +36,12 @@ class PicoWakeWord:
 
 if __name__ == '__main__':
     picowakeword = PicoWakeWord(PICOVOICE_API_KEY, keyword_path)
-
-    while True:
+    """
+        while True: 
         if(picowakeword.detect_wake_word() >= 0):
              print("I heard it")
+    """
+
 
         
 
