@@ -25,4 +25,5 @@ audio_obj_unpacked = struct.unpack_from("h" * porcupine.frame_length, audio_obj)
 
 keyword_idx = porcupine.process(audio_obj_unpacked)
 
-    
+if keyword_idx >= 0:
+    print("I heard it.")    
