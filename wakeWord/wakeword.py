@@ -1,13 +1,13 @@
 import pvporcupine
 import pyaudio
 import struct
-
 #API KEY for hot word picovoice
+
+
 PICOVOICE_API_KEY = "KNIrwq9lmXqHfNxhvDTDPsFQ5hTYOAmGdK0PAQqaFtPunAsbXHO2Vg=="
 porcupine = pvporcupine.create(
     access_key = PICOVOICE_API_KEY,
-    #keyword_paths = ['.\Hey-Mickey_en_windows_v2_2_0\Hey-Mickey_en_windows_v2_2_0.ppn'],
-    keywords=['bumblebee', 'picovoice']
+    keyword_paths = ['./wakeWord/Hey-Yuki_en_windows_v2_2_0/Hey-Yuki_en_windows_v2_2_0.ppn'],
 )
 
 myaudio = pyaudio.PyAudio()
@@ -28,3 +28,4 @@ while True:
 
     if keyword_idx >= 0:
         print("I heard it.")    
+
