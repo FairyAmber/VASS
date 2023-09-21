@@ -32,20 +32,11 @@ class PicoWakeWord:
             audio_obj_unpacked = struct.unpack_from("h" * self.porcupine.frame_length, audio_obj)
             keyword_idx = self.porcupine.process(audio_obj_unpacked)
             return keyword_idx
-
-class PP(PicoWakeWord):
-     def __init__(self):
-            super().__init__(PICOVOICE_API_KEY, keyword_path)
-            self.porcupine = pvporcupine.create( #create procupine
-            access_key = PICOVOICE_API_KEY,
-            keywords=['bumblebee','picovoice']
-        )
-     
+        
 
 if __name__ == '__main__':
     picowakeword = PicoWakeWord(PICOVOICE_API_KEY, keyword_path)
-    pico2 = PP()
-    time = 0
+
     while True:
         if(picowakeword.detect_wake_word() >= 0):
             if(time < 3):
@@ -54,8 +45,7 @@ if __name__ == '__main__':
             elif(time >= 3):
                 print("fuck you!")
                 time = 0
-        if(pico2.detect_wake_word() >= 0):
-             print("I'm Yuki2!")
+        
 
 
 
